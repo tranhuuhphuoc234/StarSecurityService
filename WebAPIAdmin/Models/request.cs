@@ -7,18 +7,21 @@ using System.Threading.Tasks;
 
 namespace WebAPIAdmin.Models
 {
-    [Table("role")]
-    public class role
+    [Table("request")]
+    public class request
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id",TypeName ="int")]
         public int id { get; set; }
         
-        [Column("name",TypeName ="varchar")]
-        [StringLength(200)]
-        public string name { get; set; }
-        
+        [Column("description",TypeName ="varchar")]
+        [StringLength(3000)]
+        public string description { get; set; }
+
+        [Column("client",TypeName ="int")]
+        public int client { get; set; }
+
         [Column("status",TypeName ="bit")]
         public bool status { get; set; }
 

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace WebAPIAdmin.Models
 {
-    [Table("role")]
-    public class role
+    [Table("trainning")]
+    public class trainning
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,9 +18,18 @@ namespace WebAPIAdmin.Models
         [Column("name",TypeName ="varchar")]
         [StringLength(200)]
         public string name { get; set; }
+
+        [Column("detail",TypeName ="varchar")]
+        [StringLength(3000)]
+        public string detail { get; set; }
         
-        [Column("status",TypeName ="bit")]
-        public bool status { get; set; }
+        [Column("duration",TypeName ="varchar")]
+        [StringLength(50)]
+        public string duration { get; set; }
+
+        [Column("trainer",TypeName ="varchar")]
+        [StringLength(50)]
+        public string trainer { get; set; }
 
     }
 }
